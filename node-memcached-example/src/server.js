@@ -8,8 +8,8 @@ const Memcached = require('memcached');
 //Connect to memcache
 
  //Memcache connection
- const client= new Memcached('nodejs-memcached-test-cache.xutotu.cfg.eun1.cache.amazonaws.com:11211');
- client.connect('nodejs-memcached-test-cache.xutotu.cfg.eun1.cache.amazonaws.com:11211', function( err, conn ){
+ const client= new Memcached('memcached-cluster-for-node-app.kj3yin.cfg.use1.cache.amazonaws.com:11211');
+ client.connect('memcached-cluster-for-node-app.kj3yin.cfg.use1.cache.amazonaws.com:11211', function( err, conn ){
   if( err ) 
   {
     console.log('error connecting to memcached', err);
