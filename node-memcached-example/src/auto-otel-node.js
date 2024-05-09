@@ -13,6 +13,7 @@ const { Resource } = require("@opentelemetry/resources");
 const {
   SemanticResourceAttributes,
 } = require("@opentelemetry/semantic-conventions");
+const { MemcachedInstrumentation } = require('@opentelemetry/instrumentation-memcached');
 
 // Traces
 const traceExporter = new OTLPTraceExporter({
@@ -44,7 +45,10 @@ const sdk = new NodeSDK({
   }),
   traceExporter: traceExporter,
   metricReader: metricReader,
-  instrumentations: [getNodeAutoInstrumentations()],
+  instrumentations: [new MemcachedInstrumentation({
+    enhancedDatabaseReporting: false,
+  }),
+  ...getNodeAutoInstrumentations()],
 });
 
 sdk.start();
