@@ -41,7 +41,6 @@ const sdk = new NodeSDK({
     [SemanticResourceAttributes.SERVICE_NAME]: `${process.env.OTEL_SERVICE_NAME_NODE}`,
     [SemanticResourceAttributes.SERVICE_INSTANCE_ID]: `${process.env.OTEL_SERVICE_NAME_NODE}-instance`,
     [SemanticResourceAttributes.SERVICE_VERSION]: "1.0.0",
-    'cloud.resource_endpoint':"nodejs-memcached-test-cache.xutotu.eun1.cache.amazonaws.com:11211"
   }),
   traceExporter: traceExporter,
   metricReader: metricReader,
